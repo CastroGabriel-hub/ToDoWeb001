@@ -13,6 +13,7 @@ btn.addEventListener('click', function createTask(event){
 
 function addTask(newTask){
     //task validation
+    //Try adding a validation for loop here
     if(input.value.length == 0){
         alert('Empty task, please add some content');
     } else {
