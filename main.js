@@ -12,25 +12,28 @@ btn.addEventListener('click', function createTask(event){
 });
 
 function validateTask(newTask){
-    //getting all the tasks
+    //getting all the tasks to a NodeList
     tasks = document.querySelectorAll('.task');
-    if (tasks.length == 0) {
-        addTask(newTask)
-    }
 
-    //validation loop
-    for(var i = 0; i < tasks.length; i++){
-        if(input.value === tasks.item(i).innerText){
-            removeDuplicate(newTask);
-            if(confirm('duplicate task, add it anyway?')){
+    if (tasks.length == 0 && !input.value.length == 0) {
+        addTask(newTask)
+    } else  if(input.value.length == 0){
+        alert('Empty task, please fill with content');
+    } else {
+        //validation loop
+        for(var i = 0; i < tasks.length; i++){
+            if(input.value === tasks.item(i).innerText){
+                removeDuplicate(newTask);
+                if(confirm('duplicate task, add it anyway?')){
+                    addTask(newTask);
+                }
+                break; //Avoid repeating the same confirmation message
+            } else  if(input.value.length == 0){
+                alert('Empty task, please fill with content');
+                break;//Avoid repeating alert message
+            } else {
                 addTask(newTask);
             }
-            break; //Avoid repeating the same confirmation message
-        } else  if(input.value.length == 0){
-            alert('Empty task, please fill with content');
-            break;//Avoid repeating alert message
-        } else {
-            addTask(newTask);
         }
     }
 
