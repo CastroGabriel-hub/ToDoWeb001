@@ -4,11 +4,30 @@
 }
 
 body{
-    background-color: #282a36;
-    display: flex;
-    justify-content: center;
+    background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400px;
+}
+
+.header{
+    padding: 12px;
+    background-color: #3cd070;
+    color: #fff;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.todoApp{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .inputs, .tasks{
@@ -16,28 +35,31 @@ body{
 }
 
 .inputs{
-    width: 800px;
+    max-width: 1000px;
     display: flex;
     justify-content: space-between;
 }
 
-#input, #btnAdd{
-    border: none;
+#input, #btnAdd, .task{
+    border: 1px solid #3cd070;
     border-radius: 7px;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 #input{
     padding: 16px;
-    width: 650px;
+    width: 800px;
     font-size: 16px;
+    color: #484848;
 }
 
 #btnAdd{
+    margin-left: 12px;
     padding: 16px;
-    background-color:  #FFC300 ;
-    color:#282a36;
+    background-color:  #3cd070 ;
+    color:#fff;
     font-weight: 700;
-    font-size: 16px;
 }
 
 #btnAdd:hover{
@@ -51,7 +73,6 @@ body{
 .task{
     margin-bottom: 10px;
     padding: 16px;
-    border: 1px solid #818589;
-    border-radius: 7px;
-    color: #fff;
+    background-color: #FFF5EE;
+    color: #484848;
 }
