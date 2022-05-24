@@ -7,7 +7,7 @@ var taskList = document.querySelector('#taskList');
 btn.addEventListener('click', function createTask(event){
     var newTask = document.createElement('li');
     newTask.setAttribute('class', 'task');
-
+    
     validateTask(newTask);
 });
 
@@ -22,7 +22,7 @@ function validateTask(newTask){
     } else {
         //validation loop
         for(var i = 0; i < tasks.length; i++){
-            if(input.value === tasks.item(i).innerText){
+            if(newTask.innerHTML == tasks.item(i).innerHTML){
                 removeDuplicate(newTask);
                 if(confirm('duplicate task, add it anyway?')){
                     addTask(newTask);
@@ -40,11 +40,40 @@ function validateTask(newTask){
     return newTask;
 }
 
+function appendBtns(newTask){
+    //Creating a div for the elements
+    var divBtns = document.createElement('div');
+    divBtns.setAttribute('class', 'divBtns');
+
+    //Checkbox Element
+    var check = document.createElement('input');
+    check.setAttribute('type', 'checkbox');
+    check.setAttribute('class', 'checkbox');
+    divBtns.append(check);
+
+    //Edit button
+    var btnEdit = document.createElement('button');
+    btnEdit.setAttribute('class', 'taskBtn btnEdit');
+    btnEdit.innerText = 'Edit';
+    divBtns.append(btnEdit);
+
+    //Delete button
+    var btnDel = document.createElement('button');
+    btnDel.setAttribute('class', 'taskBtn btnDel');
+    btnDel.innerText = 'Delete';
+    divBtns.append(btnDel);
+
+    newTask.append(divBtns);
+}
+
 function addTask(newTask){
-    newTask.innerText = input.value;
+    newTask.innerHTML = '<p>' + input.value + '</p>';
+    appendBtns(newTask);
     taskList.append(newTask);
 }
 
 function removeDuplicate(newTask){
     newTask.remove();
 }
+
+//TODO: implement delete function and fix the validation function

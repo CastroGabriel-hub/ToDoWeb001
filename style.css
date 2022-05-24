@@ -11,7 +11,7 @@ body{
 
 .header{
     padding: 20px;
-    background-color: #3cd070;
+    background-color: #3cd068;
     color: #fff;
 }
 
@@ -20,7 +20,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .todoApp{
@@ -62,7 +61,7 @@ body{
     font-weight: 700;
 }
 
-#btnAdd:hover{
+#btnAdd:hover, .taskBtn{
     cursor: pointer;
 }
 
@@ -72,7 +71,35 @@ body{
 
 .task{
     margin-bottom: 10px;
-    padding: 16px;
+    padding: 12px;
     background-color: #FFF5EE;
     color: #484848;
+}
+
+.task, .divBtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divBtns{
+    width: 170px;
+}
+
+.taskBtn{
+    padding: 6px;
+    border: none;
+    border-radius: 7px;
+    width: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.btnEdit{
+    background-color: #3de0e9;
+}
+
+.btnDel{
+    background-color: rgb(250, 89, 61);
 }
