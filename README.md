@@ -1,6 +1,4 @@
 # ToDoWeb001
-tasks NodeList and taskList HTMLColection are basicaly the same thing
-so I can use diferent logics to solve the validation problem
+A simple TO DO application built with HTML, CSS and Javascript
 
-It looks like is more dificult to work with HTMLColections than with NodeLists
-so I'm droping this alternative logic and going on with the project
+![todo01](https://user-images.githubusercontent.com/74190963/170786400-37782679-2803-4aa7-b77a-54688bca8051.png)
