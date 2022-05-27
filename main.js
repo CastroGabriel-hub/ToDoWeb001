@@ -75,5 +75,3 @@ function addTask(newTask){
 function removeDuplicate(newTask){
     newTask.remove();
 }
-
-//TODO: implement delete function and fix the validation function
