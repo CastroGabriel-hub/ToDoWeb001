@@ -12,6 +12,7 @@ body{
 .header{
     padding: 20px;
     background-color: #3cd068;
+    background-image: linear-gradient(120deg, #3cd068, #2eff6d);
     color: #fff;
 }
 
@@ -112,6 +113,7 @@ body{
     background-color: #d5d5d5;
     border-radius: 3px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .checkbox:after{
@@ -129,7 +131,12 @@ body{
     background-color: #3cd068;
 }
 
+.isChecked{
+    opacity: 0.6;
+}
+
 .isChecked p{
     color: #808080;
     text-decoration: line-through;
+    transition: all 0.5s ease;
 }

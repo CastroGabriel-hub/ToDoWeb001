@@ -3,33 +3,30 @@ var input = document.querySelector('#input');
 var btn = document.querySelector('#btnAdd');
 var taskList = document.querySelector('#taskList');
 
-//adding event to the button
-btn.addEventListener('click', function createTask(event){
-    var newTask = document.createElement('li');
-    newTask.setAttribute('class', 'task');
-    
-    addTask(newTask);
-});
+//Events
+btn.addEventListener('click', addTask);
+taskList.addEventListener('click', btnsFunctions);
 
+//Functions
 function appendBtns(newTask){
     //Creating a div for the elements
-    var divBtns = document.createElement('div');
+    const divBtns = document.createElement('div');
     divBtns.setAttribute('class', 'divBtns');
 
     //Checkbox Element
-    var check = document.createElement('input');
+    const check = document.createElement('input');
     check.setAttribute('type', 'checkbox');
     check.setAttribute('class', 'checkbox');
     divBtns.append(check);
 
     //Edit button
-    var btnEdit = document.createElement('button');
+    const btnEdit = document.createElement('button');
     btnEdit.setAttribute('class', 'taskBtn btnEdit');
     btnEdit.innerText = 'Edit';
     divBtns.append(btnEdit);
 
     //Delete button
-    var btnDel = document.createElement('button');
+    const btnDel = document.createElement('button');
     btnDel.setAttribute('class', 'taskBtn btnDel');
     btnDel.innerText = 'Delete';
     divBtns.append(btnDel);
@@ -37,22 +34,27 @@ function appendBtns(newTask){
     newTask.append(divBtns);
 }
 
-function addTask(newTask){
+function addTask(event){
+    const newTask = document.createElement('li');
+    newTask.setAttribute('class', 'task');
     newTask.innerHTML = '<p>' + input.value + '</p>';
     appendBtns(newTask);
     taskList.append(newTask);
-    check(newTask);
+    input.value = "";
 }
 
-function check(newTask){//Only works for the first task element unforntully
-    var cbs = document.querySelector('.checkbox');
+function btnsFunctions(e){
+    const item = e.target;
+    const todo = item.parentElement.parentElement; //task itself
 
-    cbs.addEventListener('click', function isChecked(event){
-        if(cbs.checked == true){
-            cbs.parentElement.parentElement.setAttribute('class', 'task isChecked');
-        }else{
-            cbs.parentElement.parentElement.setAttribute('class', 'task');
-        }
-    })
-    
+    console.log(item + todo);
+    //delete todo
+    if(item.className === 'taskBtn btnDel'){
+        todo.remove();
+    }
+
+    //check mark
+    if(item.className === 'checkbox'){
+        todo.classList.toggle('isChecked');
+    }
 }
