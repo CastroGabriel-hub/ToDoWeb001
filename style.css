@@ -11,33 +11,34 @@ body{
 
 .header{
     padding: 20px;
-    background-color: #3cd068;
     background-image: linear-gradient(120deg, #3cd068, #2eff6d);
     color: #fff;
 }
 
-.content, .checkbox{
+.content, .checkbox, .todoApp{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    
 }
 
 .todoApp{
     max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .inputs, .tasks{
     margin: 20px;
 }
 
+.task, .divBtns, .inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .inputs{
     max-width: 1000px;
-    display: flex;
-    justify-content: space-between;
 }
 
 #input, #btnAdd, .task{
@@ -77,13 +78,6 @@ body{
     color: #484848;
 }
 
-.task, .divBtns{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .divBtns{
     width: 170px;
 }
@@ -114,6 +108,7 @@ body{
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
+    align-items: center;
 }
 
 .checkbox:after{
