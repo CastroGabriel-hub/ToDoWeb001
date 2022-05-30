@@ -19,11 +19,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+}
+
+.content, .checkbox{
+    align-items: center;
 }
 
 .todoApp{
-    max-width: 1000px;
+    max-width: fit-content;
 }
 
 .inputs, .tasks{
@@ -108,7 +111,6 @@ body{
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
-    align-items: center;
 }
 
 .checkbox:after{
