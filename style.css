@@ -9,9 +9,9 @@ body{
     font-weight: 400px;
 }
 
-.header{
+.header, #btnAdd{
     padding: 20px;
-    background-image: linear-gradient(120deg, #3cd068, #2eff6d);
+    background-image: linear-gradient(120deg, #3cd068, #0dee50);
     color: #fff;
 }
 
@@ -44,7 +44,7 @@ body{
     max-width: 1000px;
 }
 
-#input, #btnAdd, .task{
+#input, #btnAdd, .task, .taskInput{
     border: 1px solid #3cd070;
     border-radius: 7px;
     font-weight: 600;
@@ -59,10 +59,9 @@ body{
 }
 
 #btnAdd{
+    border: none;
     margin-left: 12px;
     padding: 16px;
-    background-color:  #3cd070 ;
-    color:#fff;
     font-weight: 700;
 }
 
@@ -76,7 +75,10 @@ body{
 
 .task{
     margin-bottom: 10px;
-    padding: 12px;
+}
+
+.task, .taskInput{
+    padding: 8px;
     background-color: #FFF5EE;
     color: #484848;
 }
@@ -132,8 +134,13 @@ body{
     opacity: 0.6;
 }
 
-.isChecked p{
+.isChecked .taskInput{
     color: #808080;
     text-decoration: line-through;
     transition: all 0.5s ease;
+}
+
+.taskInput{
+    border: none;
+    width: 700px;
 }

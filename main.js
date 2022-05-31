@@ -37,7 +37,8 @@ function appendBtns(newTask){
 function addTask(event){
     const newTask = document.createElement('li');
     newTask.setAttribute('class', 'task');
-    newTask.innerHTML = '<p>' + input.value + '</p>';
+    newTask.innerHTML = '<input type="text" class="taskInput" readonly>';
+    newTask.firstChild.setAttribute('value', input.value);
     appendBtns(newTask);
     taskList.append(newTask);
     input.value = "";
@@ -47,14 +48,19 @@ function btnsFunctions(e){
     const item = e.target;
     const todo = item.parentElement.parentElement; //task itself
 
-    console.log(item + todo);
     //delete todo
     if(item.className === 'taskBtn btnDel'){
         todo.remove();
     }
 
-    //check mark
+    //checkbox
     if(item.className === 'checkbox'){
         todo.classList.toggle('isChecked');
     }
+
+    //edit
+    if(item.className === 'taskBtn btnEdit'){
+        todo.firstChild.removeAttribute('readonly');
+    }
+
 }
