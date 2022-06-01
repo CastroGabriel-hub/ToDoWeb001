@@ -1,26 +1,40 @@
 //mapping DOM elements
 const appDiv = document.querySelector('.todoApp');
-const form = document.querySelector('.inputs');
-const taskList = document.querySelector('#taskList');
 
 //Events
-window.addEventListener('load', createForm);
-taskList.addEventListener('click', btnsFunctions);
+window.addEventListener('load', createApp);
 
 //Functions
-function createForm(){
+function createApp(){
+    //creating elements
+    const form = document.createElement('form');
+    form.setAttribute('class', 'inputs');
+
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'input');
     input.setAttribute('placeholder', 'New task here');
-    form.appendChild(input);
 
     const btn = document.createElement('input');
     btn.setAttribute('type', 'submit');
     btn.setAttribute('value', 'Add task');
     btn.setAttribute('id', 'btnAdd');
     btn.addEventListener('click', addTask); //event
+
+    const tasksDiv = document.createElement('div');
+    tasksDiv.setAttribute('class', 'tasks');
+
+    const taskList = document.createElement('ul');
+    taskList.setAttribute('id', 'taskList');
+    taskList.addEventListener('click', btnsFunctions);
+
+    //appending elements
+    form.appendChild(input);
     form.appendChild(btn);
+    appDiv.appendChild(form);
+    tasksDiv.appendChild(taskList);
+    appDiv.appendChild(tasksDiv);
+
 }
 
 function appendBtns(newTask){
