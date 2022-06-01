@@ -8,7 +8,7 @@ window.addEventListener('load', createForm);
 taskList.addEventListener('click', btnsFunctions);
 
 //Functions
-function createForm(e){
+function createForm(){
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'input');
@@ -19,7 +19,7 @@ function createForm(e){
     btn.setAttribute('type', 'submit');
     btn.setAttribute('value', 'Add task');
     btn.setAttribute('id', 'btnAdd');
-    btn.addEventListener('click', addTask);
+    btn.addEventListener('click', addTask); //event
     form.appendChild(btn);
 }
 
