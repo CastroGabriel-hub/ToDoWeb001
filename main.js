@@ -1,13 +1,28 @@
 //mapping DOM elements
-var input = document.querySelector('#input');
-var btn = document.querySelector('#btnAdd');
-var taskList = document.querySelector('#taskList');
+const appDiv = document.querySelector('.todoApp');
+const form = document.querySelector('.inputs');
+const taskList = document.querySelector('#taskList');
 
 //Events
-btn.addEventListener('click', addTask);
+window.addEventListener('load', createForm);
 taskList.addEventListener('click', btnsFunctions);
 
 //Functions
+function createForm(e){
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('id', 'input');
+    input.setAttribute('placeholder', 'New task here');
+    form.appendChild(input);
+
+    const btn = document.createElement('input');
+    btn.setAttribute('type', 'submit');
+    btn.setAttribute('value', 'Add task');
+    btn.setAttribute('id', 'btnAdd');
+    btn.addEventListener('click', addTask);
+    form.appendChild(btn);
+}
+
 function appendBtns(newTask){
     //Creating a div for the elements
     const divBtns = document.createElement('div');
