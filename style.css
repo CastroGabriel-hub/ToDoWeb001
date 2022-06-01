@@ -63,10 +63,14 @@ body{
     margin-left: 12px;
     padding: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
 
-#btnAdd:hover, .taskBtn{
-    cursor: pointer;
+#btnAdd:hover{
+    background: transparent;
+    color: #3cd068;
+    border: 1px solid #3cd068;
+    transition: all 0.4s ease;
 }
 
 #taskList{
@@ -94,6 +98,7 @@ body{
     width: 60px;
     font-weight: 600;
     color: #fff;
+    cursor: pointer;
 }
 
 .btnEdit{

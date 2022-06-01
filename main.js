@@ -35,6 +35,7 @@ function appendBtns(newTask){
 }
 
 function addTask(event){
+    event.preventDefault();
     const newTask = document.createElement('li');
     newTask.setAttribute('class', 'task');
     newTask.innerHTML = '<input type="text" class="taskInput" readonly>';
