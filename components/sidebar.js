@@ -12,17 +12,17 @@ function createSidebar(e){
     nav.setAttribute('class', 'menu');
 
     const item1 = document.createElement('a');
-    item1.setAttribute('href', '#');
+    item1.setAttribute('href', 'index.html');
     item1.setAttribute('class', 'menu-item selected');
     item1.innerText = 'Tasks';
     
     const item2 = document.createElement('a');
-    item2.setAttribute('href', '#');
+    item2.setAttribute('href', 'profile.html');
     item2.setAttribute('class', 'menu-item');
     item2.innerText = 'Profile';
 
     const item3 = document.createElement('a');
-    item3.setAttribute('href', '#');
+    item3.setAttribute('href', 'statistics.html');
     item3.setAttribute('class', 'menu-item');
     item3.innerText = 'Statistics';
 
