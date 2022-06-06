@@ -57,6 +57,18 @@ body{
         width: 395px;
         padding: 0;
     }
+
+    .task .taskBtn{
+        margin: 5px;
+        padding: 2px;
+    }
+
+    .task .checkbox{
+        margin: 5px;
+        padding: 2px;
+        width: 17px;
+        height: 17px;
+    }
 }
 
 @media (max-width: 320px){
