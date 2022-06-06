@@ -3,7 +3,6 @@ const screen = document.querySelector('.screen');
 window.addEventListener('load', createSidebar);
 
 function createSidebar(e){
-    console.log('hey hoe')
     //creating elements
     const aside = document.createElement('aside');
     aside.setAttribute('class', 'sidebar');
@@ -13,7 +12,7 @@ function createSidebar(e){
 
     const item1 = document.createElement('a');
     item1.setAttribute('href', 'index.html');
-    item1.setAttribute('class', 'menu-item selected');
+    item1.setAttribute('class', 'menu-item');
     item1.innerText = 'Tasks';
     
     const item2 = document.createElement('a');
@@ -25,6 +24,19 @@ function createSidebar(e){
     item3.setAttribute('href', 'statistics.html');
     item3.setAttribute('class', 'menu-item');
     item3.innerText = 'Statistics';
+
+    //getting page document name
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+
+    //selecting curent page
+    if(page === 'index.html'){
+        item1.setAttribute('class', 'menu-item selected');
+    }else if(page === 'profile.html'){
+        item2.setAttribute('class', 'menu-item selected');
+    }else if(page === 'statistics.html'){
+        item3.setAttribute('class', 'menu-item selected');
+    }
 
     //appending elements
     nav.appendChild(item1);
