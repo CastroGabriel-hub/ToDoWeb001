@@ -39,7 +39,7 @@ body{
     }
 
     #input{
-        width: 400px;
+        max-width: 400px;
     }
 
     .task{
@@ -50,7 +50,7 @@ body{
 
 @media (max-width: 570px){
     #input{
-        width: 250px;
+        max-width: 250px;
     }
 
     .task{
@@ -74,7 +74,8 @@ body{
     }
 
     #input{
-        width: 120px;
+        max-width: 120px;
+        width: auto;
     }
 
     .task{

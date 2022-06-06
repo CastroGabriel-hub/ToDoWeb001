@@ -71,7 +71,7 @@
 }
 
 .task{
-    width: 800px;
+    max-width: 800px;
     margin-bottom: 10px;
 }
 
