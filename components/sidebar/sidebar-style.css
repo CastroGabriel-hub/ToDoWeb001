@@ -1,0 +1,20 @@
+.sidebar{
+    flex: 1 1 0;
+    max-width: 300px;
+    padding: 0;
+    background-color: #FFF5EE;
+}
+
+.sidebar .menu .menu-item{
+    display: block;
+    padding: 1rem;
+    color: #3cd068;
+    text-decoration: none;
+    transition: 0.2s linear;
+    font-weight: 600;
+}
+
+.selected, .menu-item:hover{
+    background-color: #EDEADE;
+    border-right: 4px solid #3cd068;
+}
