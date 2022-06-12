@@ -21,9 +21,9 @@ function createSidebar(e){
     item2.innerText = 'Profile';
 
     const item3 = document.createElement('a');
-    item3.setAttribute('href', 'statistics.html');
+    item3.setAttribute('href', 'calendar.html');
     item3.setAttribute('class', 'menu-item');
-    item3.innerText = 'Statistics';
+    item3.innerText = 'Calendar';
 
     //getting page document name
     var path = window.location.pathname;
@@ -34,7 +34,7 @@ function createSidebar(e){
         item1.setAttribute('class', 'menu-item selected');
     }else if(page === 'profile.html'){
         item2.setAttribute('class', 'menu-item selected');
-    }else if(page === 'statistics.html'){
+    }else if(page === 'calendar.html'){
         item3.setAttribute('class', 'menu-item selected');
     }
 
